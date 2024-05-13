@@ -86,7 +86,7 @@ public class TextFragment extends Fragment {
         textGenerated();
         textView.setText(textGenerated());
         TextView link = view.findViewById(R.id.textUrl);
-        link.setText("GitHub link");
+        link.setText("GitHub Exam link");
 
         String url = "https://github.com/Audriusvilnius/Exam_Application_0511";
         link.setOnClickListener(v -> {
@@ -99,11 +99,6 @@ public class TextFragment extends Fragment {
                 // Chrome is probably not installed
             }
         });
-
-
-
-
-
         return view;
     }
 
@@ -119,7 +114,6 @@ public class TextFragment extends Fragment {
                 sentence.append(".");
             }
         }
-
         return sentence.toString();
     }
 }
