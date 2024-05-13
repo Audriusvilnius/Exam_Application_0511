@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         pagerAdapter.addFragmet(new RegisterFragment());
         pagerAdapter.addFragmet(new HomeFragment());
         pagerAdapter.addFragmet(new TextFragment());
+        pagerAdapter.addFragmet(new ConverterFragment());
         viewPager.setAdapter(pagerAdapter);
 
     }

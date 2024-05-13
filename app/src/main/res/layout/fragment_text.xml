@@ -17,6 +17,20 @@
         android:text="Text and link"
         android:textSize="50sp" />
 
+    <TextView
+        android:id="@+id/text_and_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_logout"
+        android:layout_below="@+id/tv_title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/text_and_link" />
+
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
@@ -49,20 +63,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"/>
 
-    <TextView
-        android:id="@+id/text_and_link"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_logout"
-        android:layout_below="@+id/tv_title"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="100dp"
-
-        android:text="@string/text_and_link" />
 
 
 </RelativeLayout>
