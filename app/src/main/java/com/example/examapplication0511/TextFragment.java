@@ -1,5 +1,9 @@
 package com.example.examapplication0511;
 
+import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -71,6 +75,7 @@ public class TextFragment extends Fragment {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -80,6 +85,25 @@ public class TextFragment extends Fragment {
         TextView textView = view.findViewById(R.id.text_and_link);
         textGenerated();
         textView.setText(textGenerated());
+        TextView link = view.findViewById(R.id.textUrl);
+        link.setText("GitHub link");
+
+        String url = "https://github.com/Audriusvilnius/Exam_Application_0511";
+        link.setOnClickListener(v -> {
+            try {
+                Uri uri = Uri.parse("googlechrome://navigate?url=" + url);
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+            } catch (ActivityNotFoundException e) {
+                // Chrome is probably not installed
+            }
+        });
+
+
+
+
+
         return view;
     }
 

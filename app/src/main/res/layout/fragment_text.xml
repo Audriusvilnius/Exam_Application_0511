@@ -78,5 +78,30 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"/>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_logout"
+        android:layout_below="@+id/text_and_link"
+        android:layout_marginTop="-292dp"
+        android:layout_marginBottom="372dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textUrl"
+        android:layout_width="254dp"
+        android:layout_height="55dp"
+        android:layout_above="@+id/btn_logout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/et_custom"
+        android:gravity="center"
+        android:text="@string/textUrl"
+        android:textSize="25sp" />
+
 
 </RelativeLayout>

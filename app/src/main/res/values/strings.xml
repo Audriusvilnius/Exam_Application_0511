@@ -22,5 +22,7 @@
     <string name="calculate_ans_convert">Calculate ans Convert</string>
     <string name="celsius_to_fahrenheit">Celsius to Fahrenheit</string>
     <string name="swipe">Swipe Left or Right</string>
+    <string name="texturl">textUrl</string>
+    <string name="textUrl" />
 
 </resources>
