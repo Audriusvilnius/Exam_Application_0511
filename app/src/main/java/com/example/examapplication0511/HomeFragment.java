@@ -28,12 +28,14 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    int[] welcome_Pic = {
+    private static final int[] welcome_Pic = {
             R.drawable.designer,
             R.drawable.designer1,
-            R.drawable.designer2
-            ,};
-
+            R.drawable.designer2,
+            R.drawable.designer3,
+            R.drawable.designer4,
+            R.drawable.designer5,
+    };
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -72,8 +74,6 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home, container, false);
         ImageView imageView = view.findViewById(R.id.imageView);
         setWelcomePic(imageView);
-
-        Log.d("HomeFragment", "onCreateView: ");
         // Inflate the layout for this fragment
         return view;
     }
