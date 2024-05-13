@@ -34,7 +34,7 @@ public class RegisterFragment extends Fragment {
     }
 
     public String name;
-    public static String hashedPassword;
+    public static String hashedPassword = null;
     private Button registerButton;
 
     public RegisterFragment() {
@@ -109,7 +109,7 @@ public class RegisterFragment extends Fragment {
     }
 
     // Hash the password
-    private String passwordHash(EditText newPassword, EditText newSalt) {
+    public static String passwordHash(EditText newPassword, EditText newSalt) {
         String password = newPassword.getText().toString();
         String salt = newSalt.getText().toString();
         password = password + salt;

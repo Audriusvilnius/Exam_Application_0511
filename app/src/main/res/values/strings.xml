@@ -13,4 +13,7 @@
     <string name="re_type_password">Re-type Password</string>
     <string name="your_name">Full Name</string>
     <string name="register_message">Register Message</string>
+    <string name="login_message">login_message</string>
+    <string name="home">Home</string>
+    <string name="logout">Logout</string>
 </resources>
