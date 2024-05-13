@@ -35,14 +35,29 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_above="@id/swipeRight"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="148dp"
         android:src="@drawable/ic_arrow_right" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@id/swipeLeft"
+        android:layout_below="@+id/btn_logout"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@+id/imageView2"
+        android:src="@drawable/ic_arrow_left"
+        tools:ignore="NotSibling" />
 
     <TextView
         android:id="@+id/swipeRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/swipe_left_for_register"
+        android:text="@string/swipe"
         android:textSize="15sp"
         android:fontFamily="@font/roboto_regular"
         android:layout_centerHorizontal="true"

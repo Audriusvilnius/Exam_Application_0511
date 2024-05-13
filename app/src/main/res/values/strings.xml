@@ -20,6 +20,7 @@
     <string name="text_and_link" />
     <string name="operations">Operations</string>
     <string name="calculate_ans_convert">Calculate ans Convert</string>
-    <string name="celsius_to_fahrenheit">Celcius to Fahrenheit</string>
+    <string name="celsius_to_fahrenheit">Celsius to Fahrenheit</string>
+    <string name="swipe">Swipe Left or Right</string>
 
 </resources>
