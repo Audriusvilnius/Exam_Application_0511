@@ -59,15 +59,12 @@ public class RegisterFragment extends Fragment {
         registerButton = view.findViewById(R.id.btn_register);
         // Register the user
         registerUser(name, email, password, confirmPassword);
-        if (checkLogIn) {
-
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.replace(R.id.viewPager, new HomeFragment());
-            transaction.addToBackStack(null);
-            transaction.commit();
-        }
-
-
+//        if (checkLogIn) {
+//            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//            transaction.replace(R.id.viewPager, new HomeFragment());
+//            transaction.addToBackStack(null);
+//            transaction.commit();
+//        }
         return view;
     }
 
@@ -105,7 +102,6 @@ public class RegisterFragment extends Fragment {
                     new Handler().postDelayed(() -> {
                         startActivity(new Intent(getActivity(), MainActivity.class));
                     }, 2000);
-
                 }
             } else {
                 Activity view_pass = getActivity();
