@@ -45,14 +45,12 @@ public class LogInFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view;
         view = inflater.inflate(R.layout.fragment_log_in, container, false);
         // Inflate the layout for this fragment
-
         EditText email = view.findViewById(R.id.et_email);
         EditText password = view.findViewById(R.id.et_password);
         TextView message = view.findViewById(R.id.login_message);
@@ -84,12 +82,12 @@ public class LogInFragment extends Fragment {
                     new Handler().postDelayed(() -> {
                         message.setVisibility(View.INVISIBLE);
                     }, 3000);
-                    Log.d("LogInFragment", "Log In Successful: "+ checkLogIn);
+                    Log.d("LogInFragment", "Log In Successful: " + checkLogIn);
                     openHome();
 
                 } else {
                     message.setTextColor(getResources().getColor(R.color.red));
-                    message.setText("Incorrect Username or password");
+                    message.setText("Incorrect Username or Password");
                     message.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(() -> {
                         message.setVisibility(View.INVISIBLE);
@@ -97,7 +95,7 @@ public class LogInFragment extends Fragment {
                 }
             } else {
                 message.setTextColor(getResources().getColor(R.color.red));
-                message.setText("User not found");
+                message.setText("User Not Found");
                 message.setVisibility(View.VISIBLE);
                 new Handler().postDelayed(() -> {
                     message.setVisibility(View.INVISIBLE);
