@@ -21,8 +21,10 @@
     <string name="operations">Operations</string>
     <string name="calculate_ans_convert">Calculate and Convert</string>
     <string name="celsius_to_fahrenheit">Celsius to Fahrenheit</string>
-    <string name="swipe">Swipe Left or Right</string>
+    <string name="swipe">Swipe Left Go Back or Right To Next</string>
     <string name="texturl">textUrl</string>
     <string name="textUrl" />
+    <string name="swipe_right_to_go_back">Swipe Right To Go Back</string>
+    <string name="swipt_to_left_next_page">Swipe Left To Next</string>
 
 </resources>

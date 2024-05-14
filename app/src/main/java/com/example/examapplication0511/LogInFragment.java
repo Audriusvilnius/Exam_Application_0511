@@ -59,7 +59,6 @@ public class LogInFragment extends Fragment {
         message.setVisibility(View.INVISIBLE);
         logInButton = view.findViewById(R.id.btn_login);
         logIn(email, password);
-
         return view;
     }
 
@@ -85,7 +84,7 @@ public class LogInFragment extends Fragment {
                     new Handler().postDelayed(() -> {
                         message.setVisibility(View.INVISIBLE);
                     }, 3000);
-
+                    Log.d("LogInFragment", "Log In Successful: "+ checkLogIn);
                     openHome();
 
                 } else {
@@ -108,11 +107,9 @@ public class LogInFragment extends Fragment {
     }
 
     public void openHome() {
-        Intent intent = new Intent(getActivity(), HomeFragment.class);
+        Intent intent = new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
         checkLogIn = true;
-
-
     }
 }
 

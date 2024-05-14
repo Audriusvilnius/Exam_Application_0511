@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -43,8 +44,9 @@ public class TextFragment extends Fragment {
     };
     private static final Random RANDOM = new Random();
     private static final int wordCount = 100;
+
     public TextFragment() {
-        
+
         // Required empty public constructor
     }
 
@@ -83,11 +85,9 @@ public class TextFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_text, container, false);
         // Inflate the layout for this fragment
         TextView textView = view.findViewById(R.id.text_and_link);
-        textGenerated();
         textView.setText(textGenerated());
         TextView link = view.findViewById(R.id.textUrl);
         link.setText("GitHub Exam link");
-
         String url = "https://github.com/Audriusvilnius/Exam_Application_0511";
         link.setOnClickListener(v -> {
             try {
@@ -99,8 +99,11 @@ public class TextFragment extends Fragment {
                 // Chrome is probably not installed
             }
         });
+        Button button = view.findViewById(R.id.btn_logout_text);
+        button.setVisibility(View.INVISIBLE);
         return view;
     }
+
 
     private String textGenerated() {
         StringBuilder sentence = new StringBuilder();

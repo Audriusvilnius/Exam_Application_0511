@@ -160,6 +160,10 @@ public class ConverterFragment extends Fragment {
                 isResult = true;
             }
         });
+
+        Button button = view.findViewById(R.id.btn_logout_converter);
+        button.setVisibility(View.INVISIBLE);
+
         return view;
     }
 

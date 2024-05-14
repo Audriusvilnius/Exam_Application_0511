@@ -18,7 +18,7 @@
         android:textSize="50sp" />
 
     <Button
-        android:id="@+id/btn_logout"
+        android:id="@+id/btn_logout_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/imageView2"
@@ -35,40 +35,28 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_above="@id/swipeRight"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="148dp"
-        android:src="@drawable/ic_arrow_right" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_above="@id/swipeLeft"
-        android:layout_below="@+id/btn_logout"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="12dp"
-        android:layout_toStartOf="@+id/imageView2"
-        android:src="@drawable/ic_arrow_left"
-        tools:ignore="NotSibling" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="0dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_arrow_right" />
 
     <TextView
         android:id="@+id/swipeRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/swipe"
-        android:textSize="15sp"
-        android:fontFamily="@font/roboto_regular"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/swipt_to_left_next_page"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="297dp"
         android:layout_height="316dp"
-        android:layout_above="@+id/btn_logout"
+        android:layout_above="@+id/btn_logout_home"
         android:layout_below="@+id/tv_title"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"

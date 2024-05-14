@@ -1,11 +1,14 @@
 package com.example.examapplication0511;
 
+import static com.example.examapplication0511.LogInFragment.checkLogIn;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Handler;
 import android.util.Log;
@@ -56,6 +59,14 @@ public class RegisterFragment extends Fragment {
         registerButton = view.findViewById(R.id.btn_register);
         // Register the user
         registerUser(name, email, password, confirmPassword);
+        if (checkLogIn) {
+
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.viewPager, new HomeFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
+
 
         return view;
     }

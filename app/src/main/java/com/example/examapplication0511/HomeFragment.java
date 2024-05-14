@@ -1,5 +1,6 @@
 package com.example.examapplication0511;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.Random;
@@ -74,8 +76,18 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home, container, false);
         ImageView imageView = view.findViewById(R.id.imageView);
         setWelcomePic(imageView);
+        Button button = view.findViewById(R.id.btn_logout_home);
+        logOutButton(button);
         // Inflate the layout for this fragment
         return view;
+    }
+
+    public void logOutButton(Button button) {
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            startActivity(intent);
+            LogInFragment.checkLogIn = false;
+        });
     }
 
     private void setWelcomePic(ImageView imageView) {
