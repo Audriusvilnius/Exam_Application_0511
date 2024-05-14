@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_log_in"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LogInFragment">
@@ -56,20 +57,37 @@
         android:background="@drawable/et_custom"
         android:textSize="15sp" />
 
+    <TextView
+        android:id="@+id/login_message"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/et_password"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:hint="@string/login_message"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="14sp"
+        android:textStyle="bold|italic" />
+
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_password"
-        android:background="@drawable/btn_custom"
+        android:layout_above="@+id/imageView2"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="207dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_custom"
         android:fontFamily="@font/roboto_regular"
-        android:textColor="@android:color/white"
-        android:text="@string/login"/>
+        android:text="@string/login"
+        android:textColor="@android:color/white" />
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/ic_arrow_right"

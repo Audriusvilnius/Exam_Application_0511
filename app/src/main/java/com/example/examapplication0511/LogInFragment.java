@@ -2,16 +2,24 @@ package com.example.examapplication0511;
 
 import static android.view.View.X;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -29,7 +37,8 @@ public class LogInFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    private Boolean checkLogIn;
+
+    public static Boolean checkLogIn = false;
     private Button logInButton;
 
     public LogInFragment() {
@@ -46,37 +55,61 @@ public class LogInFragment extends Fragment {
 
         EditText email = view.findViewById(R.id.et_email);
         EditText password = view.findViewById(R.id.et_password);
+        TextView message = view.findViewById(R.id.login_message);
+        message.setVisibility(View.INVISIBLE);
         logInButton = view.findViewById(R.id.btn_login);
-        String hashedPassword = null;
-        hashedPassword = RegisterFragment.hashedPassword;
-       Log.d("LogInFragment", "Hashed Password: " + hashedPassword);
         logIn(email, password);
-
         return view;
     }
 
+    @SuppressLint("SetTextI18n")
     private void logIn(EditText userEmail, EditText userPassword) {
         logInButton.setOnClickListener(v -> {
             String email = userEmail.getText().toString();
             String password = userPassword.getText().toString();
-            String logInToApp = email + password;
-            Log.d("LogInFragment", "Email: " + email + " Password: " + password);
+            Activity view = getActivity();
+            assert view != null;
+            TextView message = view.findViewById(R.id.login_message);
+            String checkLogIn = null;
+            checkLogIn = RegisterFragment.passwordHash(userPassword, userEmail);
+            String hashedPassword = null;
+            hashedPassword = RegisterFragment.hashedPassword;
+            boolean checkPass = false;
+            if (hashedPassword != null) {
+                checkPass = hashedPassword.equals(checkLogIn);
+                if (checkPass) {
+                    message.setTextColor(getResources().getColor(R.color.green));
+                    message.setText("Log In Successful");
+                    message.setVisibility(View.VISIBLE);
+                    new Handler().postDelayed(() -> {
+                        message.setVisibility(View.INVISIBLE);
+                    }, 3000);
+                    Log.d("LogInFragment", "Log In Successful: "+ checkLogIn);
+                    openHome();
 
-            try {
-                // Create MD5 Hash
-                MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
-                digest.update(logInToApp.getBytes());
-                byte[] messageDigest = digest.digest();
-                // Create Hex String
-                StringBuilder hexString = new StringBuilder();
-                for (int i = 0; i < messageDigest.length; i++)
-                    hexString.append(String.format("%02X", messageDigest[i]));
-                String pass = hexString.toString();
-                Log.d("LogInFragment", "Password: " + pass);
-            }catch (NoSuchAlgorithmException e){
-                e.printStackTrace();
+                } else {
+                    message.setTextColor(getResources().getColor(R.color.red));
+                    message.setText("Incorrect Username or password");
+                    message.setVisibility(View.VISIBLE);
+                    new Handler().postDelayed(() -> {
+                        message.setVisibility(View.INVISIBLE);
+                    }, 3000);
+                }
+            } else {
+                message.setTextColor(getResources().getColor(R.color.red));
+                message.setText("User not found");
+                message.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(() -> {
+                    message.setVisibility(View.INVISIBLE);
+                }, 3000);
             }
         });
+    }
+
+    public void openHome() {
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
+        checkLogIn = true;
     }
 }
 

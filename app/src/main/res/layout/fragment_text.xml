@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogInFragment">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inid_daisy"
+        android:text="Text and link"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/text_and_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_logout"
+        android:layout_below="@+id/tv_title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/text_and_link" />
+
+    <Button
+        android:id="@+id/btn_logout_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/btn_custom"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/logout"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@id/swipeRight"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="148dp"
+        android:src="@drawable/ic_arrow_right" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@id/swipeLeft"
+        android:layout_below="@+id/textUrl"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="-2dp"
+        android:layout_toStartOf="@+id/imageView2"
+        android:src="@drawable/ic_arrow_left"
+        tools:ignore="NotSibling" />
+
+    <TextView
+        android:id="@+id/swipeRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/swipe"
+        android:textSize="15sp"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/textUrl"
+        android:layout_width="254dp"
+        android:layout_height="55dp"
+        android:layout_above="@+id/btn_logout_text"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/et_custom"
+        android:gravity="center"
+        android:text="@string/textUrl"
+        android:textSize="25sp" />
+
+
+</RelativeLayout>
