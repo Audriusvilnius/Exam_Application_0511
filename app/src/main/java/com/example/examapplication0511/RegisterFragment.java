@@ -93,7 +93,8 @@ public class RegisterFragment extends Fragment {
                     message.setText("Registration Successful");
                     new Handler().postDelayed(() -> {
                         startActivity(new Intent(getActivity(), MainActivity.class));
-                    }, 3000);
+                    }, 2000);
+
                 }
             } else {
                 Activity view_pass = getActivity();
